@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen py-10">
+    <h1>Result</h1>
+    {% if result %}
+    <h5>Task Id : {{ result.id }}</h5>
+    <h5>Task State : {{result.state}}</h5>
+    <h5>Task Status : {{result.status}}</h5>
+    <h5>Result Value : {{result.result}}</h5>
+    {% endif %}
+
+</body>
+</html>

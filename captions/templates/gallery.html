@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen py-10">
+
+  <h1 class="text-3xl font-bold text-center mb-8">Image Gallery</h1>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {% for item in images %}
+      <div class="bg-white rounded shadow p-4 flex flex-col items-center">
+        <img src="{{ item.image.url }}" alt="Image" class="w-full h-64 object-cover rounded mb-4">
+        <p class="text-gray-700 text-center">{{ item.caption }}</p>
+      </div>
+    {% empty %}
+      <p class="col-span-full text-center text-gray-500">No images uploaded yet.</p>
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-8">
+    <a href="{% url 'uploadimage' %}" class="text-blue-500 hover:underline">Upload another image</a>
+  </div>
+
+</body>
+</html>
